@@ -9,11 +9,28 @@ const setTable = (data) => {
 
     var table = document.getElementById('data');
 
-    table.innerHTML = data.map(d => {
-        return (
-            "<tr><th scope='row'>" + d[14] + "</th><td>" + d[25] + "</td><td>" + d[12] + "</td><td><a class='btn btn-primary'>Detalles</a></td></tr>"
-        )
+    table.innerHTML = data.map((d, index) => {
+
+        let html = "<tr><th scope='row'>" + d[14] + "</th><td>" + d[25] + "</td><td>" + d[12] + "</td><td><a class='btn btn-primary' id='details_" + index +"'>Detalles</a></td></tr>";
+
+        return html
     });
+
+    data.map((d, index) => {
+    
+        let button = document.getElementById('details_' + index);
+        button.onclick = () => { showDetails(d) }
+    })
+
+}
+
+const showDetails = (details) => {
+    
+    document.getElementById('details_title').innerText = details[25];
+    
+    document.getElementById('details_data').innerHTML = "<li> Clasificación: "+ details[22] +"</li> <li> Area: "+ details[21] +"</li>"
+
+    $('#details').modal('show')
 
 }
 
