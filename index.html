@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidades</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row m-4">
+            <div class="col-md-12">
+                <h1 style="text-align: center;">UNIVERSIDADES</h1>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="name">Nombre Universidad</label>
+            <input onchange="globalSearch()" type="name" class="form-control" id="name">
+            <small id="nameHelp" class="form-text text-muted">Digite el nombre de la universidad.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="city">Ciudad</label>
+            <input onchange="globalSearch()" type="city" class="form-control" id="city">
+            <small id="cityHelp" class="form-text text-muted">Digite el nombre de la ciudad.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="group">Grupo de Investigación</label>
+            <input onchange="globalSearch()" type="group" class="form-control" id="group">
+            <small id="groupHelp" class="form-text text-muted">Digite el nombre del grupo de investigación.</small>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Universidad</th>
+                        <th scope="col">Grupo de investigación</th>
+                    </tr>
+                </thead>
+                <tbody id="data">
+        
+                </tbody>
+            </table>
+        </div>
+        
+
+    </div>
+
+    <script>
+        getData();
+    </script>
+
+</body>
+
+</html>
